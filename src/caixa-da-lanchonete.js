@@ -57,28 +57,23 @@ class CaixaDaLanchonete {
         } else if (metodoDePagamento === "credito") {
             total += total * this.acrescimoCredito;
         }
-
     
         return `R$ ${total.toFixed(2).replace(".", ",")}`;
     }
 
     validaItemExtra(carrinho) {
-
         if(carrinho.includes("chantily")) {
             if(!carrinho.includes("cafe")) {
                 return "Item extra não pode ser pedido sem o principal";
             }
         }
-
         if(carrinho.includes("queijo")) {
             if(!carrinho.includes("sanduiche")) {
                 return "Item extra não pode ser pedido sem o principal";
             }
         }
-
         return;
     }
-
 }
 
 export { CaixaDaLanchonete };
